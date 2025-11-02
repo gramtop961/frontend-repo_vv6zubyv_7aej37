@@ -1,28 +1,26 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import Objectives from './components/Objectives';
+import Roles from './components/Roles';
+import Features from './components/Features';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-screen bg-white text-gray-900">
+      <Hero />
+      <Objectives />
+      <Roles />
+      <Features />
 
-export default App
+      <footer className="border-t border-gray-200 mt-10">
+        <div className="mx-auto max-w-7xl px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-gray-600">© {new Date().getFullYear()} Community Connect. All rights reserved.</p>
+          <nav className="flex items-center gap-5 text-sm text-gray-600">
+            <a href="#features" className="hover:text-gray-900">Features</a>
+            <a href="#roles" className="hover:text-gray-900">Roles</a>
+            <a href="#objectives" className="hover:text-gray-900">Objectives</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  );
+}
